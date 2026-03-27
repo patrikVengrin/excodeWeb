@@ -1,0 +1,16 @@
+# OS súbory
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.cursor/
+*.suo
+*.user
+
+# Node (ak by si niekedy použil)
+node_modules/
+
+# Lokálne env súbory
+.env
+.env.local
