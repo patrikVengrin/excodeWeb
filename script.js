@@ -1,5 +1,7 @@
 (() => {
   const header = document.getElementById("site-header");
+  const navToggle = document.getElementById("nav-toggle");
+  const siteNav = document.getElementById("site-nav");
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // Header transparency -> solid on scroll
@@ -9,6 +11,52 @@
   };
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
+
+  // Mobile navigation toggle
+  const closeMobileNav = () => {
+    header?.classList.remove("nav-open");
+    navToggle?.setAttribute("aria-expanded", "false");
+  };
+
+  const openMobileNav = () => {
+    header?.classList.add("nav-open");
+    navToggle?.setAttribute("aria-expanded", "true");
+  };
+
+  navToggle?.addEventListener("click", () => {
+    const isOpen = header?.classList.contains("nav-open");
+    if (isOpen) {
+      closeMobileNav();
+      return;
+    }
+    openMobileNav();
+  });
+
+  siteNav?.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+    if (!target.closest("a")) return;
+    closeMobileNav();
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!header?.classList.contains("nav-open")) return;
+    const target = event.target;
+    if (!(target instanceof Node)) return;
+    if (header.contains(target)) return;
+    closeMobileNav();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    closeMobileNav();
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 839) {
+      closeMobileNav();
+    }
+  });
 
   // Fade-in animations
   const animateEls = Array.from(document.querySelectorAll("[data-animate]"));

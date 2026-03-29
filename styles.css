@@ -100,6 +100,36 @@ a {
 .nav::-webkit-scrollbar {
   display: none;
 }
+.nav-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  background: #fff;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0;
+  cursor: pointer;
+  flex-direction: column;
+}
+.nav-toggle-bar {
+  width: 18px;
+  height: 2px;
+  border-radius: 99px;
+  background: rgba(0, 0, 0, 0.78);
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+.site-header.nav-open .nav-toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.site-header.nav-open .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+.site-header.nav-open .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
 .nav-link {
   font-size: 18px;
   color: rgb(0, 0, 0);
@@ -693,8 +723,41 @@ section {
 }
 
 @media (max-width: 839px) {
+  .header-inner {
+    position: relative;
+  }
   .brand-logo {
     height: 28px;
+  }
+  .nav-toggle {
+    display: inline-flex;
+  }
+  .nav {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    padding: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    overflow: visible;
+    scrollbar-width: auto;
+  }
+  .site-header.nav-open .nav {
+    display: flex;
+  }
+  .nav-link {
+    display: block;
+    width: 100%;
+    padding: 10px 8px;
+    border-bottom: 0;
+    font-size: 16px;
   }
   .pill {
     font-size: 12px;
