@@ -722,7 +722,7 @@ section {
   }
 }
 
-@media (max-width: 839px) {
+@media (max-width: 839px), (hover: none) and (pointer: coarse) {
   .header-inner {
     position: relative;
   }
@@ -767,6 +767,9 @@ section {
   }
   .hero-ctas {
     width: 100%;
+  }
+  .stats + .light-section {
+    padding-top: 24px;
   }
 }
 
