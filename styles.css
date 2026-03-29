@@ -23,9 +23,7 @@ html {
 body {
   margin: 0;
   font-family: Inter, Geist, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: radial-gradient(900px 520px at 18% 0%, rgba(140, 82, 255, 0.12), transparent 55%),
-    radial-gradient(900px 520px at 86% 12%, rgba(255, 145, 77, 0.12), transparent 55%),
-    linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+  background: var(--bg-2);
   color: var(--text-on-light);
   line-height: 1.5;
 }
@@ -138,7 +136,7 @@ a {
 }
 
 .btn-primary {
-  background: linear-gradient(90deg, var(--brand-l), var(--brand-r));
+  background: var(--brand-r);
   border-color: transparent;
   box-shadow: 0 18px 50px rgba(140, 82, 255, 0.2);
   color: #fff;
@@ -234,10 +232,7 @@ a {
   font-size: clamp(36px, 5.5vw, 64px);
   letter-spacing: -0.03em;
   line-height: 1.06;
-  background: linear-gradient(90deg, var(--brand-l), var(--brand-r));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: solid black;
+  color: var(--text-on-light);
 }
 .hero-sub {
   margin: 14px 0 0;
@@ -294,10 +289,7 @@ section {
   margin: 0;
   font-size: 28px;
   letter-spacing: -0.03em;
-  background: linear-gradient(90deg, var(--brand-l), var(--brand-r));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--text-on-light);
 }
 .section-sub {
   margin: 12px 0 0;
@@ -332,7 +324,7 @@ section {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(90deg, rgba(140, 82, 255, 0.16), rgba(255, 145, 77, 0.16));
+  background: rgba(140, 82, 255, 0.16);
   border: 1px solid rgba(140, 82, 255, 0.22);
   color: rgba(140, 82, 255, 0.95);
 }
@@ -373,17 +365,14 @@ section {
 .stat-card {
   border-radius: var(--radius);
   border: 1px solid rgba(0, 0, 0, 0.10);
-  background: rgba(255, 255, 255, 0.66);
+  background: rgb(255, 255, 255);
   padding: 18px;
 }
 .stat-value {
   font-size: 34px;
   font-weight: 900;
   letter-spacing: -0.03em;
-  background: linear-gradient(90deg, var(--brand-l), var(--brand-r));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--brand-l);
 }
 .stat-label {
   margin-top: 10px;
@@ -394,7 +383,7 @@ section {
 /* 5. CTA banner */
 .cta-banner {
   padding: 0;
-  background: linear-gradient(90deg, rgba(140, 82, 255, 1), rgba(255, 145, 77, 1));
+  background: var(--brand-l);
 }
 .cta-banner-inner {
   padding: 44px 20px;
@@ -408,10 +397,7 @@ section {
   margin: 0;
   font-size: 26px;
   letter-spacing: -0.03em;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.78));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: rgba(255, 255, 255, 0.98);
 }
 .cta-sub {
   margin: 10px 0 0;
@@ -432,7 +418,7 @@ section {
 /* 5. Faces */
 .faces {
   padding: 56px 0;
-  background: #ffffff;
+  background: #f9f9fc;
 }
 .faces-head {
   text-align: center;
@@ -443,10 +429,7 @@ section {
   margin: 0;
   font-size: 34px;
   letter-spacing: -0.03em;
-  background: linear-gradient(90deg, var(--brand-l), var(--brand-r));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--text-on-light);
 }
 .faces-sub {
   margin: 12px 0 0;
@@ -474,8 +457,8 @@ section {
   justify-content: center;
   font-weight: 700;
   color: #fff;
-  background: linear-gradient(90deg, var(--brand-l), var(--brand-r));
-  box-shadow: 0 14px 30px rgba(140, 82, 255, 0.22);
+  background: var(--brand-r);
+  box-shadow: 0 14px 30px rgba(255, 149, 0, 0.22);
 }
 .face-name {
   margin: 0;
@@ -491,7 +474,7 @@ section {
 /* 6. Location */
 .location {
   padding: 56px 0;
-  background: linear-gradient(180deg, #f9f9fc 0%, #ffffff 100%);
+  background: #f9f9fc;
 }
 .location-grid {
   display: grid;
@@ -508,10 +491,7 @@ section {
   margin: 0;
   font-size: 30px;
   letter-spacing: -0.03em;
-  background: linear-gradient(90deg, var(--brand-l), var(--brand-r));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--text-on-light);
 }
 .location-sub {
   margin: 10px 0 0;
@@ -537,7 +517,7 @@ section {
 .location-map-wrap {
   border-radius: var(--radius);
   padding: 1px;
-  background: linear-gradient(90deg, rgba(140, 82, 255, 0.45), rgba(255, 145, 77, 0.45));
+  background: rgba(140, 82, 255, 0.45);
 }
 .location-map {
   width: 100%;
@@ -567,10 +547,7 @@ section {
   font-weight: 900;
   font-size: 20px;
   letter-spacing: -0.03em;
-  background: linear-gradient(90deg, var(--brand-l), var(--brand-r));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--brand-l);
 }
 .footer-tagline {
   color: rgba(0, 0, 0, 0.62);
